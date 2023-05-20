@@ -6,6 +6,7 @@ import com.employees.model.EmployeePair;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 public class Parser {
 
@@ -16,7 +17,7 @@ public class Parser {
     }
 
     public List<EmployeePair> getEmployeePairs() throws IllegalArgumentException, IOException {
-        List<Employee> allEmployees = EmployeeParser.getAllEmployees(this.csvFile);
+        Set<Employee> allEmployees = EmployeeParser.getAllEmployees(this.csvFile);
         PairFinder pairFinder = new PairFinder(allEmployees);
         return pairFinder.findAllPairProjects();
     }

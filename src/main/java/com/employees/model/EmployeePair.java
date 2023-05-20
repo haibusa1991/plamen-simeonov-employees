@@ -3,10 +3,10 @@ package com.employees.model;
 import javafx.beans.property.SimpleStringProperty;
 
 public class EmployeePair {
-    private SimpleStringProperty employeeId1;
-    private SimpleStringProperty employeeId2;
-    private SimpleStringProperty projectId;
-    private SimpleStringProperty daysWorked;
+    private final SimpleStringProperty employeeId1;
+    private final SimpleStringProperty employeeId2;
+    private final SimpleStringProperty projectId;
+    private final SimpleStringProperty daysWorked;
 
 
     public EmployeePair(String employeeId1, String employeeId2, String projectId, String daysWorked) {

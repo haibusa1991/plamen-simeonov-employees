@@ -30,4 +30,36 @@ public class Employee {
     public LocalDate getEndDate() {
         return endDate;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        if (!id.equals(employee.id)) return false;
+        if (!projectId.equals(employee.projectId)) return false;
+        if (!startDate.equals(employee.startDate)) return false;
+        return endDate.equals(employee.endDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + projectId.hashCode();
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + endDate.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+               "id='" + id + '\'' +
+               ", projectId='" + projectId + '\'' +
+               ", startDate=" + startDate +
+               ", endDate=" + endDate +
+               '}';
+    }
 }

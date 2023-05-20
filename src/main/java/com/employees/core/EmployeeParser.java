@@ -8,11 +8,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class EmployeeParser {
 
-    public static List<Employee> getAllEmployees(File csvFile) throws IllegalArgumentException, IOException {
+    public static Set<Employee> getAllEmployees(File csvFile) throws IllegalArgumentException, IOException {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(csvFile));
@@ -20,11 +22,18 @@ public class EmployeeParser {
             throw new IOException("Error reading CSV file from disk.");
         }
 
-        List<Employee> employees = new ArrayList<>();
+        Set<Employee> employees = new HashSet<>();
 
         int currentLineNo = 1;
-        String currentLine = reader.readLine();
+        String currentLine = reader.readLine().trim();
         while (currentLine != null) {
+
+            if(currentLine.length()==0) {
+                currentLine = reader.readLine();
+                currentLineNo++;
+                continue;
+            }
+
             try {
                 employees.add(parseEmployeeData(currentLine));
             } catch (IllegalArgumentException e) {
