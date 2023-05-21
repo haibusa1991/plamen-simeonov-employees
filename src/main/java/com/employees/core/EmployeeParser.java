@@ -7,9 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class EmployeeParser {
@@ -48,7 +46,7 @@ public class EmployeeParser {
     }
 
     private static Employee parseEmployeeData(String rawInput) {
-        String[] tokens = rawInput.split(",\\s++");
+        String[] tokens = rawInput.split(",\\s*");
 
         if (tokens.length != 4) {
             throw new IllegalArgumentException("Malformed CSV data.");

@@ -44,7 +44,6 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
       <children>
             <Button alignment="CENTER" layoutX="277.0" layoutY="16.0" mnemonicParsing="false" text="Load CSV file" onAction="#onOpenCsvButtonClick"/>
-<!--            <Button alignment="CENTER" layoutX="377.0" layoutY="16.0" mnemonicParsing="false" text="Add row" onAction="#onAddRowClick"/>-->
             <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="80.0" layoutY="64.0" maxWidth="480" minWidth="480" prefWidth="480" AnchorPane.bottomAnchor="32.0" AnchorPane.topAnchor="64.0">
                <content>
                   <TableView maxWidth="600.0" prefHeight="280.0" prefWidth="480.0" fx:id="resultsTable">
