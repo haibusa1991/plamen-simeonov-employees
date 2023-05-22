@@ -14,23 +14,6 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PairFinderTest {
-
-    @Test
-    void findAllPairProjects() {
-    }
-
-    @Test
-    void populateProjects() {
-    }
-
-    @Test
-    void getBestPairIds() {
-    }
-
-    @Test
-    void findAllProjects() {
-    }
-
     @Test
     void findPairOverlapsForProject_returnsCorrectOneOverlap() {
         Project project = new Project();
@@ -283,22 +266,4 @@ class PairFinderTest {
         assertEquals(expectedDaysTogether, bestPair.getDaysWorkedTogether());
     }
 
-
-    @Test
-    void findBestPair_returnsCorrectPairMultiplePeriods() {
-        Project project = new Project();
-        project.addEmployee(new Employee("1", "10", LocalDate.of(2023, 1, 1), LocalDate.of(2023, 1, 15)));
-        project.addEmployee(new Employee("2", "10", LocalDate.of(2023, 2, 1), LocalDate.of(2023, 2, 15)));
-        project.addEmployee(new Employee("3", "10", LocalDate.of(2023, 1, 10), LocalDate.of(2023, 1, 20)));
-        project.addEmployee(new Employee("4", "10", LocalDate.of(2023, 3, 1), LocalDate.of(2023, 3, 15)));
-        project.addEmployee(new Employee("1", "10", LocalDate.of(2022, 1, 1), LocalDate.of(2023, 1, 1)));
-        project.addEmployee(new Employee("3", "10", LocalDate.of(2022, 1, 1), LocalDate.of(2023, 1, 1)));
-
-        project.addEmployee(new Employee("10", "15", LocalDate.of(2023, 1, 1), LocalDate.of(2023, 1, 15)));
-        project.addEmployee(new Employee("20", "15", LocalDate.of(2023, 2, 1), LocalDate.of(2023, 2, 15)));
-        project.addEmployee(new Employee("30", "15", LocalDate.of(2023, 1, 10), LocalDate.of(2023, 1, 20)));
-        project.addEmployee(new Employee("40", "15", LocalDate.of(2023, 3, 1), LocalDate.of(2023, 3, 15)));
-        project.addEmployee(new Employee("10", "15", LocalDate.of(2022, 1, 1), LocalDate.of(2023, 1, 1)));
-        project.addEmployee(new Employee("30", "15", LocalDate.of(2022, 1, 1), LocalDate.of(2023, 1, 1)));
-    }
 }
